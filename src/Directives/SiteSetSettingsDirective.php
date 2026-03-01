@@ -126,7 +126,6 @@ final class SiteSetSettingsDirective extends BaseDirective
     }
 
     /**
-     * @throws \League\Flysystem\FileNotFoundException
      * @throws FileLoadingException
      */
     public function loadFileFromDocumentation(BlockContext $blockContext, string $filename): string

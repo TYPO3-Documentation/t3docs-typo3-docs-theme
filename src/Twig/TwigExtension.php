@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace T3Docs\Typo3DocsTheme\Twig;
 
-use League\Flysystem\Exception;
+use League\Flysystem\FilesystemException;
 use LogicException;
 use phpDocumentor\Guides\Nodes\AnchorNode;
 use phpDocumentor\Guides\Nodes\DocumentTree\DocumentEntryNode;
@@ -617,7 +617,7 @@ final class TwigExtension extends AbstractExtension
                     $renderContext->getLoggerInformation(),
                 );
             }
-        } catch (LogicException|Exception $e) {
+        } catch (LogicException|FilesystemException $e) {
             $this->logger->error(
                 sprintf('Unable to write file "%s", %s', $outputPath, $e->getMessage()),
                 $renderContext->getLoggerInformation(),
