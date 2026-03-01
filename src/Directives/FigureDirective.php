@@ -107,7 +107,7 @@ final class FigureDirective extends BaseDirective
             'name' => $scalarOptions['name'] ?? null,
         ]);
 
-        $figureNode = new FigureNode($image, new CollectionNode($collectionNode->getChildren()));
+        $figureNode = new FigureNode($image, new CollectionNode(array_values($collectionNode->getChildren())));
 
         // Build filtered options - copy all options but validate zoom mode
         // We must set all options ourselves because DirectiveRule::postProcessNode
